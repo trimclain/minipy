@@ -38,7 +38,8 @@ def treep(directory, indent=""):
 
 def main():
     if len(argv) > 2:
-        return "Error: too many arguments"
+        print("Error: too many arguments")
+        exit(1)
     if len(argv) == 1:
         path = getcwd()
         print(".")
