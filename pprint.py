@@ -2,8 +2,8 @@
 
 import os
 import subprocess
-from time import sleep
 from string import ascii_uppercase
+from time import sleep
 
 LETTERS = ascii_uppercase
 LAG = 0.02
@@ -11,6 +11,7 @@ LAG = 0.02
 # IDEA: add colors
 # from colorama import Fore, Style
 # print(f"{Fore.RED}Red Text Here{Style.RESET_ALL}"
+
 
 def pretty_print(string: str):
     string = string.upper()
@@ -21,14 +22,17 @@ def pretty_print(string: str):
             if letter == string[i]:
                 break
 
+
 def pretty_print_filled_char(string: str):
     width = os.get_terminal_size()[0]
     pretty_print(string * width)
+
 
 def pretty_print_all_letters():
     for letter in LETTERS:
         pretty_print_filled_char(letter)
     print("OMG, you crazy if you watched it all, HOLY SHIT!")
+
 
 def print_help_menu():
     print("\n" + "*"*60)
@@ -41,6 +45,7 @@ def print_help_menu():
     print("a, loadall -- see a loading with every letter")
     print("*" * 60)
 
+
 def prepare_for_start():
     print("Starting in 3")
     sleep(1)
@@ -50,6 +55,7 @@ def prepare_for_start():
     sleep(1)
     print("GO")
     sleep(1)
+
 
 def main():
     print_help_menu()
@@ -83,6 +89,7 @@ def main():
         else:
             print("Unknown Command")
             sleep(LAG)
+
 
 if __name__ == "__main__":
     main()
